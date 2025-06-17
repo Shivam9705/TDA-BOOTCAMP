@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌴 MIT Manipal Vibes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    .bg-animated {
+      background: linear-gradient(-45deg, #ffe0e9, #d0f4de, #a5d8ff, #fff0f6);
+      background-size: 400% 400%;
+      animation: pastelShift 18s ease infinite;
+    }
+
+    @keyframes pastelShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .glass::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: calc(100% + 24px);
+      height: calc(100% + 24px);
+      background: linear-gradient(45deg, #ffd6a5, #caffbf, #a5d8ff, #ffc8dd);
+      background-size: 300% 300%;
+      z-index: -1;
+      filter: blur(30px);
+      border-radius: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .glass:hover::before {
+      opacity: 1;
+      animation: glowFlow 6s linear infinite;
+    }
+
+    @keyframes glowFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="bg-animated min-h-screen flex items-center justify-center px-4 py-10">
+
+  <!-- Audio Elements -->
+  <audio id="hari" src="hari.mp3"></audio>
+  <audio id="patti" src="patti.mp3"></audio>
+  <audio id="aankhein" src="aankhein.mp3"></audio>
+  <audio id="laal" src="laal.mp3"></audio>
+  <audio id="manipal" src="manipal.mp3"></audio>
+  <audio id="manipal" src="manipal.mp3"></audio>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl">
+    
+    <div onclick="document.getElementById('hari').play()" class="glass text-[#2b2d42] text-center p-8 rounded-3xl shadow-xl hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-2">🌿</div>
+      <h2 class="text-xl font-semibold">Hari</h2>
+      <p class="text-sm opacity-80">Green chill vibes</p>
+    </div>
+
+    <div onclick="document.getElementById('patti').play()" class="glass text-[#2b2d42] text-center p-8 rounded-3xl shadow-xl hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-2">💸</div>
+      <h2 class="text-xl font-semibold">Patti</h2>
+      <p class="text-sm opacity-80">Where did the money go?</p>
+    </div>
+
+    <div onclick="document.getElementById('aankhein').play()" class="glass text-[#2b2d42] text-center p-8 rounded-3xl shadow-xl hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-2">👁️</div>
+      <h2 class="text-xl font-semibold">Aankhein</h2>
+      <p class="text-sm opacity-80">Staring into the soul</p>
+    </div>
+
+    <div onclick="document.getElementById('laal').play()" class="glass text-[#2b2d42] text-center p-8 rounded-3xl shadow-xl hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-2">🔴</div>
+      <h2 class="text-xl font-semibold">Laal</h2>
+      <p class="text-sm opacity-80">Red alert feels</p>
+    </div>
+
+    <div onclick="document.getElementById('manipal').play()" class="glass text-[#2b2d42] text-center p-8 rounded-3xl shadow-xl hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-2">🌴</div>
+      <h2 class="text-xl font-semibold">Manipal</h2>
+      <p class="text-sm opacity-80">Palm tree paradise</p>
+    </div>
+
+    <div onclick="document.getElementById('manipal').play()" class="glass text-[#2b2d42] text-center p-8 rounded-3xl shadow-xl hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-2">🔥</div>
+      <h2 class="text-xl font-semibold">Manipal</h2>
+      <p class="text-sm opacity-80">Late night hostel heat</p>
+    </div>
+
+  </div>
+</body>
+</html>
