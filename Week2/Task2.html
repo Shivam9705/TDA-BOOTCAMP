@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌴 MIT Manipal Grid Vibes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background: linear-gradient(-45deg, #ffe0e9, #d0f4de, #a5d8ff, #fff0f6);
+      background-size: 400% 400%;
+      animation: bgShift 18s ease infinite;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      width: 100%;
+      padding: 2rem;
+    }
+
+    .item {
+      background: rgba(255, 255, 255, 0.6);
+      border: 2px solid #ffffff88;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2b2d42;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      backdrop-filter: blur(10px);
+    }
+
+    .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .item::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      background: linear-gradient(45deg, #ffd6a5, #caffbf, #a5d8ff, #ffc8dd);
+      background-size: 300% 300%;
+      z-index: -1;
+      filter: blur(30px);
+      border-radius: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .item:hover::before {
+      opacity: 1;
+      animation: neonFlow 6s linear infinite;
+    }
+
+    @keyframes neonFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .item {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+  <div class="item">🌿<br><strong>Hari</strong></div>
+  <div class="item">💸<br><strong>Patti</strong></div>
+  <div class="item">👁️<br><strong>Aankhein</strong></div>
+  <div class="item">🔴<br><strong>Laal</strong></div>
+  <div class="item">🌴<br><strong>Manipal</strong></div>
+  <div class="item">🔥<br><strong>Manipal</strong></div>
+</div>
+
+  </div>
+</body>
+</html>
