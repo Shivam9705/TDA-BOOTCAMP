@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivam Raj | Interactive Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px 15px;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 25px;
+      padding: 40px 30px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: #5e60ce;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .profile-img {
+      display: block;
+      margin: 20px auto;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #5e60ce;
+      box-shadow: 0 0 12px rgba(94, 96, 206, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.6rem;
+      color: #3b3b98;
+      margin-bottom: 15px;
+    }
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: #fff;
+  margin: 10px 0;
+  padding: 12px 18px;
+  border-radius: 15px;
+  border-left: 5px solid #5e60ce;
+  color: #333;
+  transition: transform 0.2s ease, background 0.3s;
+}
+
+
+    ul li:hover {
+      background: #e0e7ff;
+      transform: translateX(5px);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border: 1px solid #ddd;
+      transition: background 0.3s ease;
+    }
+
+    th {
+      background-color: #caffbf;
+    }
+
+    tr:hover {
+      background-color: #e8f5e9;
+    }
+
+    .badge-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffafcc;
+      color: #000;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin: 6px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .badge:hover {
+      background: #ffc8dd;
+      transform: scale(1.05);
+    }
+
+    .quote-section blockquote {
+      margin-top: 20px;
+      text-align: center;
+      font-style: italic;
+      color: #444;
+      font-size: 1.1rem;
+    }
+
+    .contact-form {
+      margin-top: 40px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .contact-form button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #5e60ce;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .contact-form button:hover {
+      background-color: #3b3b98;
+      transform: scale(1.05);
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      font-size: 26px;
+      color: #333;
+      transition: transform 0.3s ease, color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+      color: #5e60ce;
+    }
+
+    .chatbot-launch {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .chatbot-launch button {
+      background-color: #48cae4;
+      color: white;
+      padding: 10px 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(72, 202, 228, 0.3);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .chatbot-launch button:hover {
+      background-color: #00b4d8;
+      transform: scale(1.05);
+    }
+
+    .chatbot-box {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      max-height: 450px;
+      background: #fff;
+      border: 2px solid #5e60ce;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Fredoka', sans-serif;
+      z-index: 999;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .chat-header {
+      background: #5e60ce;
+      color: white;
+      padding: 10px 15px;
+      font-weight: bold;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+
+    .chat-body .bot,
+    .chat-body .user {
+      margin: 8px 0;
+      padding: 8px 12px;
+      border-radius: 12px;
+      max-width: 80%;
+    }
+
+    .chat-body .bot {
+      background-color: #e0e7ff;
+      align-self: flex-start;
+    }
+
+    .chat-body .user {
+      background-color: #caffbf;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 8px;
+      border-top: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-right: 8px;
+    }
+
+    .chat-input button {
+      background: #5e60ce;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .container {
+        padding: 25px 20px;
+      }
+
+      .profile-img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .social-links a {
+        font-size: 22px;
+      }
+
+      .badge {
+        font-size: 0.9rem;
+        padding: 5px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Shivam Raj</h1>
+    <div class="intro">
+      <p>🚀 Civil Engineer • 🎙️ Hindi Poet • 🌱 Startup Enthusiast @ MIT Manipal</p>
+      <img class="profile-img" src="https://media.licdn.com/dms/image/v2/D4D03AQFqMnMP9ngPcQ/profile-displayphoto-shrink_800_800/B4DZYD1L8LHIAc-/0/1743821009618?e=1755129600&v=beta&t=uX7kPHDo_NqafQNoRarLoDdFnuXjZCgkghRBs3NMeOE" alt="Shivam Raj">
+    </div>
+
+    <h2>🌟 Hobbies</h2>
+    <ul>
+      <li>🖋️ Writing random sad poems & forgetting them</li>
+      <li>📸 Capturing strangers without context (legally)</li>
+      <li>💡 Planning startups I’ll launch (someday?)</li>
+    </ul>
+
+    <h2>💼 Projects</h2>
+    <ul>
+      <li><strong>Yaan Barpe</strong> – Tulunadu’s tourism, but make it poetic</li>
+      <li><strong>Erudemy</strong> – Teaching the unteachable (including me)</li>
+      <li><strong>Insta Reels</strong> – Crying on camera with rhymes 🎥</li>
+    </ul>
+
+    
+
+    <h2>📘 Learning Goals</h2>
+    <table>
+      <tr><th>Skill</th><th>Status</th></tr>
+      <tr><td>HTML/CSS</td><td>Learning</td></tr>
+      <tr><td>JS</td><td>Exploring</td></tr>
+      <tr><td>Figma</td><td>Intermediate</td></tr>
+      <tr><td>Public Speaking</td><td>Practicing</td></tr>
+    </table>
+
+    <div class="badge-section">
+      <h2>🏆 Badges</h2>
+      <div class="badge">Most Likely to Forget Deadline</div>
+      <div class="badge">Self-Proclaimed Poet</div>
+      <div class="badge">Hackathon Participant (Slept Through)</div>
+    </div>
+
+    <div class="quote-section">
+      <h2>💬 Motto</h2>
+      <blockquote>“Your words are your weapons, use them to build not break.”</blockquote>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center;">
+  <h2>🎤 Live Poetry Performance</h2>
+  <blockquote>“Words spoken from the soul stay forever.”</blockquote>
+  <br>
+  <iframe src="https://www.instagram.com/reel/DKtkIguy3VD/embed" 
+          width="320" height="400" 
+          frameborder="0" scrolling="no" 
+          allowtransparency="true" allowfullscreen 
+          style="border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+  </iframe>
+  <p style="margin-top: 10px;">
+    <a href="https://www.instagram.com/reel/DKtkIguy3VD/" target="_blank" style="color: #5e60ce; font-weight: bold;">
+      Watch on Instagram
+    </a>
+  </p>
+</div>
+
+    <div class="contact-form">
+      <h2>📬 Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="4" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <div class="social-links">
+      <h2>🔗 Connect</h2>
+      <a href="https://www.linkedin.com/in/shivamraj97?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/shiiivamraj?igsh=MWY3ZDU5eXByYzBkMA=="><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/Shivam9705"><i class="fab fa-github"></i></a>
+    </div>
+
+    <div class="chatbot-launch">
+      <h2>🤖 Talk to Shivam's AI assistant</h2>
+      <button onclick="toggleChatbot()">Launch Shivam's Chatbot</button>
+    </div>
+
+    <!-- Chatbot UI -->
+    <div id="chatbot" class="chatbot-box hidden">
+      <div class="chat-header">Lalu Yadav Chatbot
+        <span onclick="toggleChatbot()" style="float:right; cursor:pointer;">✖</span>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="bot">Hi there! I'm Shivam's AI assistant. Ask me anything 🙂</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type a message..." onkeydown="handleKey(event)">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleChatbot() {
+      document.getElementById('chatbot').classList.toggle('hidden');
+    }
+
+    function handleKey(e) {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const msg = input.value.trim();
+      if (!msg) return;
+      
+      const chatBody = document.getElementById("chatBody");
+
+      // User message
+      const userMsg = document.createElement("div");
+      userMsg.className = "user";
+      userMsg.innerText = msg;
+      chatBody.appendChild(userMsg);
+
+      input.value = "";
+
+      
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      
+      setTimeout(() => {
+        const botReply = document.createElement("div");
+        botReply.className = "bot";
+        botReply.innerText = getFakeReply(msg);
+        chatBody.appendChild(botReply);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 1000);
+    }
+
+    function getFakeReply(msg) {
+  const lower = msg.toLowerCase();
+
+  if (lower.includes("name")) return "I'm Lalu Yadav! Shivam's AI chatbot.";
+  if (lower.includes("poem")) return "Roses are red, Shivam writes too,\nHis words are magic, that’s nothing new!";
+  if (lower.includes("startup")) return "Dream big. Build slow. Launch loud.";
+  if (lower.includes("shivam")) return "Shivam is a poet, a builder, and a dreamer! 🧠💡";
+  if (lower.includes("college")) return "MIT Manipal – where ideas and chai flow freely ☕📚";
+  if (lower.includes("hobby")) return "Shivam loves capturing moments, weaving poems, and building startups!";
+  if (lower.includes("favourite") || lower.includes("favorite")) return "Tough one. But Shivam's favourite thing might be turning pain into poetry.";
+
+  return "Oops! I’m still learning... Can you try asking that differently?";
+}
+
+  </script>
+</body>
+</html>
