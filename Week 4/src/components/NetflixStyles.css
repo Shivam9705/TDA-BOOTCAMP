@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.app {
+  position: relative;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 1;
+  background-color: transparent;
+  position: relative;
+}
+
+.logo {
+  width: 150px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.language-select,
+.language-select-footer {
+  padding: 8px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.sign-in-btn {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* HERO */
+.main-content {
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/2dfeb3b8-24a4-453b-a0ce-9e59a3ab8d30/ba03fae1-334e-46bb-b3d5-e042aefcdd15/IN-en-20230710-popsignuptwoweeks-perspective_alpha_website_large.jpg") center center/cover no-repeat;
+  padding: 150px 20px 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.main-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.main-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.main-content p {
+  margin-bottom: 20px;
+}
+
+.email-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.email-form input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 300px;
+  max-width: 90%;
+}
+
+.email-form button {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* FEATURES */
+.features {
+  background-color: black;
+  color: white;
+  padding: 50px 20px;
+}
+
+.feature-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.feature-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-section img {
+  width: 400px;
+  max-width: 100%;
+  margin: 20px;
+}
+
+.feature-section .text {
+  max-width: 500px;
+  margin: 20px;
+}
+
+/* FAQ */
+.faq {
+  background: black;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.faq-item {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+  border-bottom: 1px solid #444;
+  padding: 20px 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* FOOTER */
+.footer {
+  background: black;
+  color: #999;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.footer-grid a {
+  color: #999;
+  text-decoration: none;
+}
